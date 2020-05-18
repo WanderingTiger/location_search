@@ -1,0 +1,13 @@
+{
+    "Languages": "Languages",
+    "Name": "Name",
+    "Timezones": "Timezones",
+    "Version": "Version",
+    "network_connection_error": "There is no internet connection",
+    "network_error": "Something went wrong. Try it later.",
+    "CITY": "CITY",
+    "NEIGHBORHOOD": "NEIGHBORHOOD",
+    "km": "km",
+    "Type the city": "Type the city",
+    "from you or less": "from you or less"
+}
