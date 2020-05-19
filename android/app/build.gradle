@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.rnbaseprojectv3"
+        applicationId "com.locationfilter"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

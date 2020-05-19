@@ -1,4 +1,4 @@
-package com.rnbaseprojectv3;
+package com.locationfilter;
 
 import android.os.Bundle;
 
