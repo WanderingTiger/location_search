@@ -14,11 +14,11 @@ const instance: AxiosInstance = axios.create({
     timeout: 16000,
 })
 instance.interceptors.response.use(
-    response => response,
-    async error => {
+    (response) => response,
+    async (error) => {
         Snackbar.show({
             text: i18n.t('network_error'),
-            textColor: colors.primary,
+            textColor: colors.mainBlack,
             duration: Snackbar.LENGTH_SHORT,
         })
         return await Promise.reject(error)

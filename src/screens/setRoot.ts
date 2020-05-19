@@ -22,7 +22,6 @@ const setDefaultOptions = (): void => {
             },
             backButton: {
                 visible: false,
-                // icon: imgs.back_arrow,
                 color: 'white',
             },
             background: {

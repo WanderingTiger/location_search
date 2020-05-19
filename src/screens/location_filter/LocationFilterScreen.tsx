@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import styles from './styles'
 import { View } from 'react-native'
-import { Options } from 'react-native-navigation'
-import { waitForRenderOptions } from '../../utils/navigationUtils'
-import Input from './components/input/Input'
-import ResultsList from './components/results_list/ResultsList'
-import RadiiList from './components/radii_list/RadiiList'
-import { ThrottleNavigation } from '../../utils/ThrottleNavigation'
-import { isResultsEmpty, mapRadiusToLocation, mapSearchResultToLocation } from './mapper'
-import { useLocationFilter } from './useLocationFilter'
 import { ILocationVM } from './LocationVM'
+import Input from './components/input/Input'
+import { Options } from 'react-native-navigation'
+import { useLocationFilter } from './useLocationFilter'
+import RadiiList from './components/radii_list/RadiiList'
+import ResultsList from './components/results_list/ResultsList'
+import { waitForRenderOptions } from '../../utils/navigationUtils'
+import { isResultsEmpty, mapRadiusToLocation, mapSearchResultToLocation } from './mapper'
 
 interface Props {
-    componentId?: string
     onLocationSelected?: (location: ILocationVM) => void
 }
 const defaultProps: Props = {}
 
-const LocationFilterScreen = ({ componentId, onLocationSelected }: Props) => {
+const LocationFilterScreen = ({ onLocationSelected }: Props) => {
     const [input, setInput] = useState<string>('')
     const [{ results, radii }, searchFor, searchForNearbyCities] = useLocationFilter(input)
 
@@ -32,12 +30,10 @@ const LocationFilterScreen = ({ componentId, onLocationSelected }: Props) => {
     const handleClearPress = () => setInput('')
     const handleRadiusItemPress = (index: number) => {
         onLocationSelected && onLocationSelected(mapRadiusToLocation(radii[index]))
-        ThrottleNavigation.pop(componentId).catch()
     }
     const handleResultItemPress = (sectionIndex: number, index: number) => {
         onLocationSelected &&
             onLocationSelected(mapSearchResultToLocation(results[sectionIndex].data[index]))
-        ThrottleNavigation.pop(componentId).catch()
     }
 
     return (
